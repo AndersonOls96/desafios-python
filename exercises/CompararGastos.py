@@ -1,31 +1,27 @@
 class ComparadorDeGastos:
     def __init__(self):
-        self.gastos_joao = []  # Lista para armazenar os gastos de João
-        self.gastos_pedro = []  # Lista para armazenar os gastos de Pedro
-
+        self.gastos_joao = []
+        self.gastos_pedro = []      
+ 
     def adicionar_gastos_joao(self, gastos):
-        self.gastos_joao.extend(gastos)
-
+        self.gastos_joao.append(gastos)
+ 
     def adicionar_gastos_pedro(self, gastos):
-        self.gastos_pedro.extend(gastos)
-
+        self.gastos_pedro.append(gastos)
+     
+ 
     def calcular_total_gastos(self, gastos):
+        # Implemente o método calcular_total_gastos
+        # Dica: você pode usar o método sum para somar os valores da lista de gastos
         return sum(gastos)
-
+ 
     def quem_gastou_mais(self):
-        total_gastos_joao = self.calcular_total_gastos(self.gastos_joao)
-        total_gastos_pedro = self.calcular_total_gastos(self.gastos_pedro)
-
-        if total_gastos_joao > total_gastos_pedro:
-            return "João gastou mais."
-        elif total_gastos_joao < total_gastos_pedro:
-            return "Pedro gastou mais."
+        total_joao = self.calcular_total_gastos(self.gastos_joao)
+        total_pedro = self.calcular_total_gastos(self.gastos_pedro)
+ 
+        if total_joao > total_pedro:
+            return "João"
+        elif total_pedro > total_joao:
+            return "Pedro"
         else:
-            return "João e Pedro gastaram a mesma quantidade."
-#Teste 
-comparador = ComparadorDeGastos()
-
-comparador.adicionar_gastos_joao([50, 30, 20])
-comparador.adicionar_gastos_pedro([40, 45, 25])
-
-print(comparador.quem_gastou_mais())  # Saída: "Pedro gastou mais."
+            return "Empate"
