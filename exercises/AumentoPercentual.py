@@ -1,12 +1,15 @@
 class FormatarPercentual:
     def __init__(self):
-        # Adicione o(s) atributo(s) necessário(s)
-        pass # Remova esta linha
+        self.aumento_vendas = 0
+
     def definir_aumento_vendas(self, aumento):
-        # Implemente o método definir_aumento_vendas com o(s) parâmetro(s) e atribuição(ões) necessária(s)
-        pass # Remova esta linha
+        self.aumento_vendas = aumento
 
     def exibir_aumento_formatado(self):
-        aumento_formatado = "{:.2f}".format(self.aumento_vendas)
-        return # Retorne o valor formatado
-       
+        aumento_formatado = "{:.2f}%".format(self.aumento_vendas)
+        return aumento_formatado
+    
+# Teste da classe
+formatador = FormatarPercentual()
+formatador.definir_aumento_vendas(8.9)
+print(formatador.exibir_aumento_formatado())  # Saída esperada: 8.90%
