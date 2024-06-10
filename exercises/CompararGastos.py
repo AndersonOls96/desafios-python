@@ -1,26 +1,31 @@
 class ComparadorDeGastos:
     def __init__(self):
-        # Adicione os atributos necessários
-        # Dica: você pode usar listas para armazenar os gastos de João e Pedro
-        pass # Remova esta linha
+        self.gastos_joao = []  # Lista para armazenar os gastos de João
+        self.gastos_pedro = []  # Lista para armazenar os gastos de Pedro
 
     def adicionar_gastos_joao(self, gastos):
-        # Implemente o método adicionar_gastos_joao
-        # Dica: você pode usar o método append para adicionar um gasto à lista de gastos de João
-        pass # Remova esta linha
+        self.gastos_joao.extend(gastos)
 
     def adicionar_gastos_pedro(self, gastos):
-        # Implemente o método adicionar_gastos_pedro
-        # Dica: você pode usar o método append para adicionar um gasto à lista de gastos de Pedro
-        pass # Remova esta linha
+        self.gastos_pedro.extend(gastos)
 
     def calcular_total_gastos(self, gastos):
-        # Implemente o método calcular_total_gastos
-        # Dica: você pode usar o método sum para somar os valores da lista de gastos
-        return 
+        return sum(gastos)
 
     def quem_gastou_mais(self):
-        # Implemente o método quem_gastou_mais
-        # Dica 1: você pode usar o método calcular_total_gastos para calcular os gastos de João e Pedro
-        # Dica 2: você pode usar uma estrutura condicional para comparar os gastos de João e Pedro
-        return
+        total_gastos_joao = self.calcular_total_gastos(self.gastos_joao)
+        total_gastos_pedro = self.calcular_total_gastos(self.gastos_pedro)
+
+        if total_gastos_joao > total_gastos_pedro:
+            return "João gastou mais."
+        elif total_gastos_joao < total_gastos_pedro:
+            return "Pedro gastou mais."
+        else:
+            return "João e Pedro gastaram a mesma quantidade."
+#Teste 
+comparador = ComparadorDeGastos()
+
+comparador.adicionar_gastos_joao([50, 30, 20])
+comparador.adicionar_gastos_pedro([40, 45, 25])
+
+print(comparador.quem_gastou_mais())  # Saída: "Pedro gastou mais."
