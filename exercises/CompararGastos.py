@@ -25,7 +25,7 @@ class ComparadorDeGastos:
         # Dica 1: você pode usar o método calcular_total_gastos para calcular os gastos de João e Pedro
         # Dica 2: você pode usar uma estrutura condicional para comparar os gastos de João e Pedro
         total_joao = self.calcular_total_gastos(self.gastos_joao)
-        total_pedro = self.adicionar_gastos_pedro(self.gastos_pedro)
+        total_pedro = self.calcular_total_gastos(self.gastos_pedro)
 
         if total_joao > total_pedro:
             return "João"
